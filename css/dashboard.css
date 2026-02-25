@@ -1,0 +1,411 @@
+/* Layout Principal do Dashboard */
+.dashboard-body {
+    background-color: var(--cinza-fundo);
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Barra Lateral (Sidebar) */
+.sidebar {
+    width: 260px;
+    background-color: var(--branco);
+    border-right: 1px solid var(--cinza-borda);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar-logo {
+    padding: 20px;
+    border-bottom: 1px solid var(--cinza-borda);
+    text-align: center;
+}
+
+.sidebar-logo img {
+    max-width: 150px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.sidebar-menu a {
+    padding: 15px 25px;
+    color: var(--texto-principal);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.sidebar-menu a:hover, .sidebar-menu a.active {
+    background-color: var(--cinza-fundo);
+    color: var(--verde-embrapii);
+    border-left-color: var(--verde-embrapii);
+}
+
+.sidebar-menu a.logout {
+    margin-top: auto;
+    color: #e3342f; /* Cor vermelha para sair */
+}
+
+/* Área Central de Conteúdo */
+.main-content {
+    flex: 1;
+    margin-left: 260px; /* Compensa a sidebar fixa */
+    padding: 30px 40px;
+}
+
+/* Cabeçalho do Painel */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.top-header h2 {
+    color: var(--azul-primario);
+    margin: 0;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: var(--verde-embrapii);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Área de Filtros */
+.filtros-dashboard {
+    background: var(--branco);
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.filtros-dashboard h3 {
+    margin-top: 0;
+    font-size: 1rem;
+    color: var(--texto-secundario);
+    text-transform: uppercase;
+}
+
+.row-filtros {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.filtro-item {
+    flex: 1;
+}
+
+.filtro-item label {
+    font-size: 0.85rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.btn-box {
+    flex: 0.5;
+}
+
+.btn-filtrar {
+    background-color: var(--azul-primario);
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-filtrar:hover {
+    background-color: #125796;
+}
+
+/* Tabela de Dados */
+.tabela-container {
+    background: var(--branco);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.tabela-talentos {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-talentos th {
+    background-color: var(--azul-primario);
+    color: white;
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.tabela-talentos td {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--cinza-borda);
+    color: var(--texto-principal);
+    vertical-align: middle;
+}
+
+.tabela-talentos tr:hover {
+    background-color: #f8fafc;
+}
+
+.email-text {
+    font-size: 0.85rem;
+    color: var(--texto-secundario);
+}
+
+/* Badges e Tags (Para Inclusão e Status) */
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge-novo { background-color: #e0f2fe; color: #0284c7; }
+.badge-analise { background-color: #fef08a; color: #854d0e; }
+.badge-aprovado { background-color: #dcfce3; color: #166534; }
+.badge-geral { background-color: #e2e8f0; color: #475569; }
+
+.tag-pcd, .tag-pnqi {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.tag-pcd { background-color: #f3e8ff; color: #7e22ce; }
+.tag-pnqi { background-color: #ffedd5; color: #c2410c; }
+
+/* Botão de Ação na Tabela */
+.btn-acao {
+    background-color: var(--verde-embrapii);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: transform 0.2s;
+}
+
+.btn-acao:hover {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   ESTILOS DO MODAL DE PERFIL
+   ========================================= */
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px); 
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.ativo {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: var(--branco);
+    width: 90%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transform: translateY(-30px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.ativo .modal-content {
+    transform: translateY(0); 
+}
+
+.modal-header {
+    background-color: var(--azul-primario);
+    color: var(--branco);
+    padding: 16px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.btn-fechar {
+    background: none;
+    border: none;
+    color: var(--branco);
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+.btn-fechar:hover {
+    color: #fca5a5;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.perfil-info p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+}
+
+.perfil-info strong {
+    color: var(--azul-primario);
+}
+
+.modal-tags {
+    margin-top: 15px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--cinza-borda);
+    margin: 20px 0;
+}
+
+.perfil-resumo h4 {
+    margin-top: 0;
+    color: var(--verde-embrapii);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.perfil-resumo p {
+    font-size: 0.95rem;
+    color: var(--texto-secundario);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.perfil-links {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-link {
+    padding: 10px 20px;
+    background-color: var(--cinza-fundo);
+    color: var(--azul-primario);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border: 1px solid var(--cinza-borda);
+    transition: all 0.2s;
+}
+
+.btn-link:hover {
+    background-color: var(--verde-embrapii);
+    color: var(--branco);
+    border-color: var(--verde-embrapii);
+}
+
+/* =========================================
+   ÁREA DE GESTÃO (STATUS NO MODAL)
+   ========================================= */
+.perfil-acoes h4 {
+    margin-top: 0;
+    color: var(--azul-primario);
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.acao-status-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--cinza-fundo);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--cinza-borda);
+}
+
+.acao-status-container label {
+    margin-top: 0; 
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.select-status {
+    flex: 1;
+    margin-top: 0; 
+    padding: 10px;
+    border: 1px solid var(--cinza-borda);
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--texto-principal);
+}
+
+.btn-salvar-status {
+    background-color: var(--verde-embrapii);
+    color: var(--branco);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-salvar-status:hover {
+    background-color: var(--verde-hover);
+    transform: translateY(-2px);
+}

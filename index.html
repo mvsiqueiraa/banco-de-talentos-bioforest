@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Banco de Talentos Embrapii BioForest</title>
+    <link rel="icon" type="image/svg+xml" href="embrapii.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <a href="https://bioforest.com.br" target="_blank">
+        <img src="embrapii.svg" alt="BioForest Logo" class="logo">
+    </a>
+</header>
+
+<div class="container">
+    <h1>Banco de Talentos</h1>
+    
+    <div class="descricao-bioforest">
+        <p>Este formulário é parte do processo seletivo para construção de um Banco de Talentos de estudantes e profissionais interessados em participar de projetos junto à unidade EMBRAPII Bioforest.</p>
+        
+        <p>Ao preencher e enviar as informações aqui solicitadas, após o deferimento do credenciamento, seus dados ficam armazenados no "Banco de Talentos" da unidade EMBRAPII Bioforest que é consultado pelos gestores para seleção de integrantes de projetos, conforme o perfil e competências demandados. O preenchimento e envio, no entanto, não garantem vaga em quaisquer projetos. Se você for selecionado, a equipe entrará em contato pelo e-mail informado, sendo assim fique atento ao seu e-mail.</p>
+       
+        <p>Sugerimos a leitura atenta do edital 01/2025 para composição do Banco de Talentos da Unidade Embrapii Bioforest. Acesse em: <a href="https://bioforest.com.br/editais/EDITAL_Nº_01_2025_–_Unidade_EMBRAPII_Bioforest_atualizado_assinado.pdf" target="_blank" style="color: var(--azul-primario); font-weight: 600; text-decoration: underline;">Edital 01/2025 - Unidade EMBRAPII Bioforest</a></p>
+        
+        <p>Lembre-se que o seu credenciamento, caso aprovado, ficará ativo e periodicamente, a Coordenação de Capacitação e RH contatará, via e-mail <strong>gbioforest@gmail.com</strong>, os credenciados para manifestação de interesse em permanecerem no Banco de Talentos. Aqueles que não se manifestarem no prazo previsto terão seu credenciamento desativado.</p>
+        
+        <p>Em caso de problemas com o preenchimento deste questionário, favor entrar em contato com a nossa equipe por e-mail: <strong>gbioforest@gmail.com</strong></p>
+    </div>
+
+    <p style="text-align: right; font-size: 0.9rem; color: var(--texto-secundario); margin-bottom: 20px;">
+        Campos marcados com <span style="color: red; font-weight: bold;">*</span> são obrigatórios
+    </p>
+
+    <form id="formTalentos" action="processa.php" method="POST">        
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+            <label for="nome">Nome Completo <span style="color: red;">*</span></label>
+            <input type="text" id="nome" name="nome" required>
+
+            <div class="row">
+                <div>
+                    <label for="email">E-mail <span style="color: red;">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="telefone">Telefone (WhatsApp) <span style="color: red;">*</span></label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <label for="nascimento">Data de Nascimento <span style="color: red;">*</span></label>
+                    <input type="date" id="nascimento" name="nascimento" required>
+                </div>
+                <div>
+                    <label for="cidade">Cidade em que reside atualmente <span style="color: red;">*</span></label>
+                    <input type="text" id="cidade" name="cidade" required>
+                </div>
+            </div>
+
+            <label for="disponibilidade">Possui disponibilidade para viagens e/ou mudança de residência? <span style="color: red;">*</span></label>
+            <select id="disponibilidade" name="disponibilidade" required>
+                <option value="">Selecione...</option>
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+                <option value="Apenas Viagens">Apenas para viagens</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Identificação Socioeconômica e Inclusão</legend>
+            <label for="pnqi">Como você se autodeclara (Cor/Raça/Etnia - IBGE)? <span style="color: red;">*</span></label>
+            <select id="pnqi" name="pnqi" required>
+                <option value="">Selecione...</option>
+                <option value="Branco">Branco</option>
+                <option value="Preto">Preto (PNQI)</option>
+                <option value="Pardo">Pardo (PNQI)</option>
+                <option value="Indígena">Indígena (PNQI)</option>
+                <option value="Amarelo">Amarelo</option>
+            </select>
+
+            <label for="pcd">É Pessoa com Deficiência (PcD)? <span style="color: red;">*</span></label>
+            <select id="pcd" name="pcd" required>
+                <option value="Nao">Não</option>
+                <option value="TEA">TEA (Transtorno do Espectro Autista)</option>
+                <option value="Fisica">Física</option>
+                <option value="Visual">Visual</option>
+                <option value="Auditiva">Auditiva</option>
+                <option value="Outra">Outra</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Formação e Vínculo</legend>
+            <label for="vinculo_ufopa">Você é atualmente estudante com vínculo ATIVO na UFOPA? <span style="color: red;">*</span></label>
+            <select id="vinculo_ufopa" name="vinculo_ufopa" required>
+                <option value="Sim">Sim</option>
+                <option value="Nao">Não</option>
+            </select>
+
+            <label for="nivel">Qual o seu nível de formação? (Considere a sua formação mais recente mesmo que esteja em andamento) <span style="color: red;">*</span></label>
+            <select id="nivel" name="nivel" required>
+                <option value="">Selecione...</option>
+                <option value="Técnico">Técnico</option>
+                <option value="Graduação">Graduação</option>
+                <option value="Mestrado">Mestrado</option>
+                <option value="Doutorado">Doutorado</option>
+                <option value="Pós-Doutorado">Pós-doutorado</option>
+                <option value="Docente UFOPA">Docente UFOPA</option>
+                <option value="Docente Externo">Docente externo</option>
+                <option value="Servidor UFOPA">Servidor UFOPA</option>
+            </select>
+
+            <label for="em_andamento">A sua formação mais recente está em andamento? <span style="color: red;">*</span></label>
+            <select id="em_andamento" name="em_andamento" required onchange="verificarAndamento()">
+                <option value="">Selecione...</option>
+                <option value="Sim">Sim</option>
+                <option value="Nao">Não (Já concluída)</option>
+            </select>
+
+            <label for="area">Área de Atuação <span style="color: red;">*</span></label>
+            <select id="area" name="area" required onchange="verificarArea()">
+                <option value="">Selecione...</option>
+                <option value="Computação">Computação / TI</option>
+                <option value="Engenharias">Engenharias</option>
+                <option value="Biotecnologia">Biotecnologia</option>
+                <option value="Ciências Ambientais">Ciências Ambientais / Florestal</option>
+                <option value="Administração">Administração / Gestão</option>
+                <option value="Outra">Outra (Especificar abaixo)</option>
+            </select>
+            <input type="text" id="area_outra" name="area_outra" placeholder="Especifique sua área de atuação" style="display: none; margin-top: 8px;">
+
+            <div id="box_formatura" style="display: none; margin-top: 15px;">
+                <label for="formatura">Semestre de Formatura (Previsão) <span style="color: red;">*</span></label>
+                <input type="text" id="formatura" name="formatura" placeholder="Ex: 2026.2">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Expertise e Pesquisa</legend>
+            
+            <label for="linha_pesquisa">Qual linha de pesquisa você tem mais aptidão para atuar em projetos? <span style="color: red;">*</span></label>
+            <select id="linha_pesquisa" name="linha_pesquisa" required onchange="verificarLinhaPesquisa()">
+                <option value="">Selecione...</option>
+                <option value="Produtos madeireiros e seus derivados">Produtos madeireiros e seus derivados</option>
+                <option value="Bioalimentos">Bioalimentos</option>
+                <option value="Biocosméticos">Biocosméticos</option>
+                <option value="Plataformas computacionais para o setor florestal">Plataformas computacionais para o setor florestal</option>
+                <option value="Bioprocessos e biotecnologias microbianas">Bioprocessos e biotecnologias microbianas (biossurfactantes)</option>
+                <option value="Outra">Outro (Especificar abaixo)</option>
+            </select>
+            <input type="text" id="linha_pesquisa_outra" name="linha_pesquisa_outra" placeholder="Especifique a linha de pesquisa" style="display: none; margin-top: 8px;">
+
+            <label for="idiomas">Idiomas e nível de proficiência (Opcional)</label>
+            <input type="text" id="idiomas" name="idiomas" placeholder="Ex: Inglês (Avançado), Espanhol (Básico)">
+
+            <label for="tags">Linguagens, Ferramentas e Softwares (Opcional)</label>
+            <input type="text" id="tags" name="tags" placeholder="Python, CAD, MATLAB, ROS, etc.">
+
+            <label for="resumo">Sua apresentação (Resumo de expertise - Máx 200 palavras) (Opcional)</label>
+            <textarea id="resumo" name="resumo" rows="5"></textarea>
+
+            <div style="background-color: #e0f2fe; padding: 15px; border-left: 4px solid #0284c7; border-radius: 4px; margin-top: 25px; margin-bottom: 10px;">
+                <p style="margin: 0; color: #0369a1; font-size: 0.95rem; line-height: 1.5;">
+                    <strong>💡 Dica importante:</strong> Os links para o Currículo Lattes e LinkedIn não são obrigatórios e você pode preencher apenas um deles. No entanto, <strong>candidatos que enviam ambos os links possuem mais chances de serem aprovados</strong> durante a nossa triagem de projetos!
+                </p>
+            </div>
+
+            <label for="lattes">Link do Currículo Lattes (Opcional)</label>
+            <input type="url" id="lattes" name="lattes" placeholder="http://lattes.cnpq.br/...">
+
+            <label for="linkedin">Link do LinkedIn (Opcional)</label>
+            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/...">
+        </fieldset>
+
+        <fieldset>
+            <legend>Declarações Finais</legend>
+            <div class="checkbox-group">
+                <input type="checkbox" id="termo1" required>
+                <label for="termo1">Declaro que li e concordo com os termos do Edital para composição do Banco de Talentos da Unidade Embrapii BioForest. <span style="color: red;">*</span></label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="termo2" required>
+                <label for="termo2">Declaro possuir interesse em atuar em projetos de pesquisa, desenvolvimento e inovação, dedicando-me às funções estabelecidas. <span style="color: red;">*</span></label>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="termo3" required>
+                <label for="termo3"><strong>Autorização de Uso de Imagem:</strong> Declaro que autorizo, de forma gratuita e por prazo indeterminado, a EMBRAPII Unidade Bioforest a utilizar minha imagem, voz, nome e depoimentos em fotos, vídeos, áudios e demais registros relacionados aos Projetos da Unidade. Esta autorização inclui a divulgação em redes sociais, websites, materiais institucionais e quaisquer outros meios de comunicação que a Embrapii venha a utilizar ou autorizar, sem que caiba qualquer remuneração ou indenização. Li e concordo com os termos acima. <span style="color: red;">*</span></label>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="termo4" required>
+                <label for="termo4">Declaro que as informações por mim preenchidas são verdadeiras. Declaro também que tenho os documentos comprobatórios necessários e estou disposto a enviá-los caso solicitado. <span style="color: red;">*</span></label>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="btn-enviar">Enviar Cadastro</button>
+    </form>
+</div>
+
+<script>
+    function verificarArea() {
+        const areaSelect = document.getElementById('area');
+        const areaOutraInput = document.getElementById('area_outra');
+        
+        if (areaSelect.value === 'Outra') {
+            areaOutraInput.style.display = 'block';
+            areaOutraInput.required = true;
+        } else {
+            areaOutraInput.style.display = 'none';
+            areaOutraInput.required = false;
+            areaOutraInput.value = '';
+        }
+    }
+
+    function verificarLinhaPesquisa() {
+        const linhaSelect = document.getElementById('linha_pesquisa');
+        const linhaOutraInput = document.getElementById('linha_pesquisa_outra');
+        
+        if (linhaSelect.value === 'Outra') {
+            linhaOutraInput.style.display = 'block';
+            linhaOutraInput.required = true;
+        } else {
+            linhaOutraInput.style.display = 'none';
+            linhaOutraInput.required = false;
+            linhaOutraInput.value = '';
+        }
+    }
+
+    function verificarAndamento() {
+        const andamentoSelect = document.getElementById('em_andamento');
+        const boxFormatura = document.getElementById('box_formatura');
+        const inputFormatura = document.getElementById('formatura');
+        
+        if (andamentoSelect.value === 'Sim') {
+            boxFormatura.style.display = 'block';
+            inputFormatura.required = true;
+        } else {
+            boxFormatura.style.display = 'none';
+            inputFormatura.required = false;
+            inputFormatura.value = '';
+        }
+    }
+</script>
+
+</body>
+</html>
